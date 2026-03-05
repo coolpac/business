@@ -257,19 +257,26 @@ Ranked by **(market size) × (low competition) × (technical feasibility)**:
 
 | Company | URL | Data | Pricing | Coverage | API Type | Weaknesses | Founded | Funding |
 |---------|-----|------|---------|----------|----------|-----------|---------|---------|
-| **ATTOM Data** | [attomdata.com](https://www.attomdata.com/) | Property, tax, deed, AVM, permits | From ~$500/mo est.; enterprise custom | 158M+ properties, 99% US pop | REST | Expensive, contact-sales pricing | 2012 | Acquired by equity firm |
-| **CoreLogic** | [corelogic.com](https://www.corelogic.com/) | Property, MLS, insurance, tax | Enterprise ($10K+/yr est.) | Near-complete US coverage | Various | Very expensive, legacy | 2010 | Public (NYSE: CLGX) |
-| **Regrid** | [regrid.com](https://regrid.com/) | Parcel data, boundaries | From $80K/yr (enterprise); self-serve plans available | 160M+ US parcels + Canada | REST + Tiles | Expensive at enterprise level | 2009 | Unknown |
-| **Estated** | [estated.com](https://estated.com/) | Property data | Being migrated to ATTOM | US-wide | REST | Acquired by ATTOM, in transition | 2016 | Acquired |
-| **BatchData** | [batchdata.io](https://batchdata.io/) | Property data | From $0.01/API call | US properties | REST | Less depth than ATTOM/CoreLogic | Unknown | Unknown |
+| **ATTOM Data** | [attomdata.com](https://www.attomdata.com/) | Property, tax, deed, AVM, permits | From ~$95/mo; enterprise custom annual license. 30-day free trial | 158M+ properties, 99% US pop, 9,000+ attributes | REST (JSON/XML) | Data lags weeks behind, opaque enterprise pricing | 2012 | Acquired by equity firm |
+| **CoreLogic (Cotality)** | [corelogic.com](https://www.corelogic.com/) | Property, MLS, insurance, tax, liens | Median ~**$12K/yr**. Per-call: $0.005 (address lookup) to **$11.50** (lien search) | 99.9% US properties, 200+ data sources | REST | Very expensive, complex sales, inaccessible to startups | 2010 | Public (NYSE: CLGX) |
+| **Regrid** | [regrid.com](https://regrid.com/) | Parcel data, boundaries | $10/mo (pro); **$80K/yr** (nationwide enterprise); $400/county download | 151M+ parcels, 156M+ building footprints, US + Canada | REST + Tiles | Expensive nationwide, primarily boundaries not deep property data | 2009 | Unknown |
+| **Estated** | [estated.com](https://estated.com/) | Property data | Being migrated to ATTOM (was $179/mo) | US-wide | REST (v4, being deprecated) | Acquired by ATTOM, docs sunset 2026. Not viable for new integrations | 2016 | Acquired |
+| **BatchData** | [batchdata.io](https://batchdata.io/) | Property data | From **$0.01/API call** | US properties | REST | Less depth than ATTOM/CoreLogic | Unknown | Unknown |
+| **Reonomy (Altus Group)** | [reonomy.com](https://www.reonomy.com/) | Commercial property data | $49-300/mo (individual); enterprise/API custom | 54M+ commercial properties, all 50 states | REST (batch up to 1M) | Commercial only, no residential, enterprise-only API | Unknown | Acquired by Altus Group |
+| **PropertyShark (Yardi)** | [propertyshark.com](https://www.propertyshark.com/) | Property records, 180+ data points | $60-170/mo | 100M+ residential, 20M+ commercial. Best in NYC | **No API** | No API at all — web interface only. Coverage best in NYC | Unknown | Yardi subsidiary |
+| **DataTree (First American)** | [datatree.com](https://web.datatree.com/) | Property, ownership, liens, HOA, PACE | Avg ~**$30.5K/yr** | Nationwide incl. recorded document images | REST (JSON) | Enterprise pricing, no transparent tiers, limited public docs | Unknown | First American subsidiary |
+| **Black Knight (ICE)** | [mortgagetech.ice.com](https://mortgagetech.ice.com/) | Property, climate risk, permits | Enterprise only (custom) | Comprehensive residential | REST | Purely institutional, acquired by ICE for $11.7B. Inaccessible to startups | Unknown | ICE subsidiary |
+| **HouseCanary** | [housecanary.com](https://www.housecanary.com/) | Property analytics, AVM, rental | $79/mo; per-call $0.30-6.00 | US residential | REST | More analytics than raw records | Unknown | Unknown |
 
 ### Building Permits
 
 | Company | URL | Data | Pricing | Coverage | API Type | Weaknesses | Founded | Funding |
 |---------|-----|------|---------|----------|----------|-----------|---------|---------|
-| **Shovels.ai** | [shovels.ai](https://www.shovels.ai/) | Building permits, contractors | $599/mo; 250 free API calls | 2,000+ jurisdictions, 85% US pop | REST | 15% US uncovered, US only | 2022 | $6.5-8.25M raised (Base10) |
-| **Construction Monitor** | [constructionmonitor.com](https://www.constructionmonitor.com/) | Permit data, construction leads | Custom pricing | National US | REST + FTP | Sales-focused, not developer-first | Unknown | Unknown |
-| **ATTOM** | [attomdata.com](https://www.attomdata.com/) | 300M+ building permits | Custom (bundled with property data) | 2,000+ building depts | REST | Expensive, bundled pricing | 2012 | N/A |
+| **Shovels.ai** | [shovels.ai](https://www.shovels.ai/) | Building permits, contractors | **$599/mo**; 250 free API calls | 2,000+ jurisdictions, 85% US pop, 180M permits | REST | 15% US uncovered, US only, monthly updates only | 2022 | $6.5-8.25M raised (Base10) |
+| **BuildZoom** | [buildzoom.com](https://www.buildzoom.com/) / [buildzoomdata.com](https://www.buildzoomdata.com/) | Building permits, contractors | Enterprise/partnership only (not public) | **350M+ permits**, 2,400 jurisdictions, 90% US pop, 6M+ contractors | Bulk files, custom integrations | **No public API**, no self-service, partnership-only | Unknown | Unknown |
+| **ConstructConnect** | [constructconnect.com](https://www.constructconnect.com/) | Construction project leads | **$129-199/mo** (Starter/Professional) | 1M+ projects, 400+ markets, 5,000 updated daily | REST (with Project Intelligence) | More project leads than raw permits, contractor-focused | Unknown | Unknown |
+| **Construction Monitor** | [constructionmonitor.com](https://www.constructionmonitor.com/) | Permit data, construction leads | Custom pricing; shop available for 5 states | 17M+ permits, 70+ metro areas | REST (Elasticsearch) + FTP | Limited to 70+ metros, 5 states in self-serve shop | Unknown | Unknown |
+| **ATTOM** | [attomdata.com](https://www.attomdata.com/) | 300M+ building permits | Custom (bundled with property data) | 2,000+ building depts | REST | Expensive, bundled with property data, not standalone | 2012 | N/A |
 
 ### Zoning & Land Use
 
