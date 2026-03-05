@@ -149,59 +149,59 @@ Ranked by **(market size) × (low competition) × (technical feasibility)**:
 
 ### 🇧🇷 Brazil / 🇲🇽 Mexico
 
-- **Brazil**: CNPJ data from Receita Federal is partially open (bulk downloads available). Court records (various tribunais) are fragmented across 27 states + federal. Property data varies by city.
+- **Brazil**: CNPJ data has official API ([Consulta CNPJ](https://www.gov.br/conecta/catalogo/apis/consulta-cnpj)) + monthly bulk dumps. [OpenCNPJ](https://opencnpj.org/) provides free API (50 req/sec). **Major change for 2026**: CNPJ going alphanumeric (letters + numbers) starting July 2026. Court records fragmented across **91 courts** (federal + state). **Property records are cartório-based (notary offices) with NO digital access** — retrieving a "matrícula do imóvel" takes days to weeks. Commercial providers: ReceitaWS, CNPJá, CPF.CNPJ.
 - **Mexico**: SAT (tax authority) data, IMSS data, company registries are difficult to access.
 
-**Opportunity**: Brazil's CNPJ data has been opened up but is still hard to query at scale. Court records across Brazilian states are a major opportunity. Latin American company verification is underserved.
+**Opportunity**: Brazil's property records being completely analog (cartório-based) is one of the largest gaps in any major economy. Court records across 91 separate systems are another massive opportunity. CNPJ is well-served but property and courts are wide open.
 
 ---
 
 ### 🇦🇪 UAE / 🇸🇦 Saudi Arabia
 
-- **UAE**: DED (Dubai), ADGM, and free zone registries are separate. No unified company API.
-- **Saudi**: Commercial Registration (CR) through MC portal. Limited digital access.
+- **UAE**: DED (Dubai), ADGM, and **40+ free zone registries** are all separate. No unified company API. No public APIs for company data.
+- **Saudi**: **WATHQ API Platform** ([developer.wathq.sa](https://developer.wathq.sa/en/apis)) is a standout — official APIs for commercial registration, articles of association, power of attorney, **real estate deed data**, and national addresses. 2025 reform unified commercial registration into single national system.
 
-**Opportunity**: Gulf states are digitizing rapidly. Company verification data for KYB/AML is in high demand from international banks doing business with Gulf entities.
+**Opportunity**: Saudi Arabia is **ahead of UAE** in API infrastructure thanks to WATHQ. UAE's fragmentation across emirates and 40+ free zones makes comprehensive data very hard. Both markets underserved by global providers. Gulf company verification for KYB/AML in high demand.
 
 ---
 
 ### 🇸🇬 Singapore / 🇯🇵 Japan / 🇰🇷 South Korea
 
-- **Singapore**: [ACRA BizFile](https://www.acra.gov.sg/) charges S$5-15 per company report. [data.gov.sg](https://data.gov.sg/) has good open data.
-- **Japan**: [EDINET](https://disclosure.edinet-fsa.go.jp/) provides corporate filings. Company registry (法務局) charges per-lookup fees. Language barrier is a moat.
-- **South Korea**: [DART](https://dart.fss.or.kr/) provides corporate disclosures. Company registry data through CRETOP.
+- **Singapore**: [ACRA BizFile](https://www.acra.gov.sg/) new portal launched Dec 2024. Open corporate datasets (27 CSV files, monthly) at [data.gov.sg](https://data.gov.sg/). New **Business Profile API** launched Nov 2025. Beneficial ownership (RORC) restricted to law enforcement.
+- **Japan**: Two free official APIs: [EDINET](https://disclosure.edinet-fsa.go.jp/) (financial filings, 11K+ companies) and [NTA Corporate Number API](https://www.houjin-bangou.nta.go.jp/en/) (all legal entities, free). But core company registry (法務局/Touki) has **no API** — 5.4M+ companies, individual lookups only. Private company financials completely opaque. EDINET only supports date-based queries (no company name search). Market dominated by Teikoku Databank and Tokyo Shoko Research.
+- **South Korea**: [DART](https://dart.fss.or.kr/) provides corporate disclosures. KONEPS procurement is comprehensive but closed (no public API).
 
-**Opportunity**: Japan has massive company data locked behind Japanese-only interfaces. An English-language Japanese company data API would be very valuable for international compliance and due diligence.
+**Opportunity**: Japan has the largest gap between available data and API access. An English-language Japanese company data API combining EDINET + NTA + Touki data would be extremely valuable for international compliance, due diligence, and supply chain verification. The Touki registry's lack of API is the key bottleneck.
 
 ---
 
 ### 🇳🇬 Nigeria / 🇿🇦 South Africa / 🇰🇪 Kenya
 
-- **Nigeria**: [CAC](https://www.cac.gov.ng/) (Corporate Affairs Commission) — recently digitized but limited API access.
-- **South Africa**: [CIPC](https://www.cipc.co.za/) — company registry with some digital access.
-- **Kenya**: eCitizen portal for business registration.
+- **Nigeria**: [CAC](https://search.cac.gov.ng/) public search available but **no official API**. Basic data: company name, registration number, type, status.
+- **South Africa**: [CIPC](https://bizportal.gov.za/) requires login for business search. **No public API**. In 2014, CIPC introduced terms restricting data re-use, effectively blocking open API access. Most restrictive of the three.
+- **Kenya**: BRS via [eCitizen](https://brs.ecitizen.go.ke/) portal. **No public API**. BRS Version II launched Feb 2026 with digital certificates replacing physical ones.
 
-**Opportunity**: African company data is severely underserved. As African markets grow and international companies need to verify African business partners (AML/KYB), there's growing demand with almost zero supply.
+**Opportunity**: All three registries lack public APIs. South Africa is most restrictive. Nigeria's CAC has most accessible public search. Growing economies + no APIs + increasing AML/KYB requirements from international banks = massive commercial opportunity with near-zero competition.
 
 ---
 
 ### 🇨🇦 Canada
 
-- Provincial business registries (not unified nationally)
-- [SEDAR+](https://www.sedarplus.ca/) for corporate filings (public companies)
-- [CanLII](https://www.canlii.org/) for court decisions (free)
+- Provincial business registries fragmented across federal + 13 provincial/territorial systems. No unified national registry. Alberta requires designated registry agents (no direct access). Some provinces free to search (Ontario, NS, QC), others pay-per-search (NB, BC).
+- [SEDAR+](https://www.sedarplus.ca/) for corporate filings (replaced SEDAR July 2023) — **no official public API**. Third-party access via QuoteMedia.
+- [CanLII](https://www.canlii.org/) for court decisions — **free API** (rare globally). [API docs on GitHub](https://github.com/canlii/API_documentation). Also [A2AJ](https://a2aj.ca/canadian-legal-data/) provides 180K+ court decisions via REST API + Hugging Face.
 - Property data varies by province
 
-**Opportunity**: Canada lacks a unified business entity API. Provincial registries are separate and formats vary.
+**Opportunity**: Canada mirrors Germany's fragmentation problem. CanLII is a standout free legal data API. SEDAR+ having no public API creates opportunity for securities filing aggregators. Provincial registry unification would be valuable.
 
 ---
 
 ### 🇦🇺 Australia / 🇳🇿 New Zealand
 
-- **Australia**: [ABR](https://abr.business.gov.au/) provides free ABN lookup API. [ASIC](https://www.asic.gov.au/) charges for company extracts. Property data is state-based.
+- **Australia**: [ABR](https://abr.business.gov.au/) provides free ABN lookup API (SOAP/JSON) — handled 1.1B searches in 10 months, 83% via web services. [ASIC](https://www.asic.gov.au/) has APIs for business names/companies registers + free weekly open dataset on Data.gov.au. **$207M beneficial ownership register** announced Aug 2025 (consultation starts early 2027). Property data fragmented across 6 states (NSW LRS, VIC Land Use Victoria, QLD Titles Registry, etc.) — CoreLogic dominates aggregation.
 - **New Zealand**: Companies Office has good digital access.
 
-**Opportunity**: Australian property data across states could be unified. ASIC data is paid and an API layer could add value.
+**Opportunity**: ABR API is excellent for basic lookups. Property data state-fragmentation mirrors India but at smaller scale. ASIC open dataset is good for research. CoreLogic near-monopoly on Australian property data creates room for challengers.
 
 ---
 
