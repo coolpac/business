@@ -13,7 +13,7 @@ Ranked by **(market size) × (low competition) × (technical feasibility)**:
 
 | Rank | Niche | Why It's Attractive | Competition | Est. TAM |
 |------|-------|--------------------| ------------|----------|
-| **1** | **Restaurant / Health Inspection Data (US-wide)** | No national API exists. ~1M+ restaurants, fragmented across 3,000+ county health departments. HDScores attempted this but stalled in alpha. Massive demand from food delivery, insurance, real estate. | **Near zero** — no commercial API | $20-50M/yr |
+| **1** | **Restaurant / Health Inspection Data (US-wide)** | No affordable national API. HDI (Hazel Analytics/Ecolab) serves enterprise only (700K+ locations, powers Yelp scores) but no public pricing/API. HDScores offers $0.05/query but limited activity. ~1M+ restaurants fragmented across 3,000+ county health depts. Massive demand from food delivery, insurance, real estate. | **Very low** — HDI (enterprise-only), HDScores (limited) | $20-50M/yr |
 | **2** | **Professional License Verification (multi-profession, nationwide)** | 50 states × dozens of license types (contractors, doctors, lawyers, nurses, real estate agents). LicensedCheck exists but limited API. Verifiable only does healthcare. No one covers ALL professions via API. | **Very low** — fragmented, no dominant player | $50-100M/yr |
 | **3** | **Building Permits + Contractor Data (underserved geos)** | Shovels.ai covers ~85% US pop from 2,000 jurisdictions but leaves 15% uncovered. International markets (UK, EU, Australia) have virtually zero permit API providers. | **Low-medium** — Shovels is early | $100M+/yr |
 | **4** | **Secretary of State / Business Entity Data (cheaper alternative)** | Cobalt Intelligence is the main player (bootstrapped, ~6 employees). OpenCorporates starts at £2,250/yr. Massive demand from fintechs, lenders, KYB/KYC. 50-state coverage is hard but doable. | **Low** — 1-2 niche players | $50-100M/yr |
@@ -24,7 +24,7 @@ Ranked by **(market size) × (low competition) × (technical feasibility)**:
 | Rank | Niche | Why It's Attractive | Competition | Est. TAM |
 |------|-------|--------------------| ------------|----------|
 | **6** | **Court Records & Litigation (state-level gaps)** | UniCourt ($49-299/mo) covers 40+ states but not all. PACER charges $0.10/page for federal. CourtListener is free but incomplete. State courts are severely underserved. | **Medium** — UniCourt, PACER, CourtListener | $200M+/yr |
-| **7** | **Government Procurement (international)** | US is covered (SAM.gov, HigherGov, GovWin). But emerging markets (India, Brazil, Africa, SE Asia) have procurement data locked in PDFs with no API. Cross-border tender intelligence is underserved. | **Low internationally** | $50-100M/yr |
+| **7** | **Government Procurement (international)** | US is covered (SAM.gov, HigherGov $500/yr, GovWin $13-119K/yr). Global procurement intelligence market: $2.6B in 2022 → $15.8B by 2030 (25.3% CAGR). India (~$200B+ annual procurement) has ZERO API. Japan, South Korea, Nigeria, Kenya, South Africa all lack APIs. Brazil has good OCDS APIs but is the exception. | **Low internationally** | $50-100M/yr |
 | **8** | **Lobbying & Campaign Finance Data** | OpenSecrets has free API but limited features. FEC data is raw/hard to use. State-level lobbying data is completely fragmented. Political intelligence is a growing market. | **Low** — OpenSecrets is nonprofit | $20-40M/yr |
 | **9** | **Environmental Permits & Violations** | EPA ECHO database exists but is clunky. State DEQ data is scattered. ESG reporting demand is surging. Lightbox/EDR charge premium prices. | **Low-medium** | $30-50M/yr |
 | **10** | **Import/Export & Customs Data (emerging markets)** | Panjiva (S&P Global) and ImportGenius dominate US bills of lading. But many countries' customs data is inaccessible. India, Brazil, Mexico have data but no good API. | **Medium in US; Low elsewhere** | $100M+/yr |
@@ -213,7 +213,7 @@ Ranked by **(market size) × (low competition) × (technical feasibility)**:
 | **Court records** | 3 | Very High | $200M+ | UniCourt, PACER, CourtListener | State court coverage |
 | **Building permits** | 2 | High | $100M+ | Shovels.ai, ATTOM, Construction Monitor | Rural/int'l coverage |
 | **Property records** | 4 | Very High | $500M+ | ATTOM, CoreLogic, Regrid | High price barrier to entry |
-| **Health inspections** | 1 | High | $30M+ | HDScores (stalled) | **No national API exists** |
+| **Health inspections** | 1.5 | High | $30M+ | HDI/Ecolab (enterprise-only, 700K+ locations), HDScores ($0.05/query) | **No affordable developer-friendly API** |
 | **Professional licenses** | 1 | High | $50M+ | Verifiable (healthcare only), LicensedCheck | Cross-profession API |
 | **Govt procurement** | 3 (US) / 1 (intl) | High | $100M+ | HigherGov, GovWin, Govly | International markets |
 | **Corporate filings (SEC)** | 3 | High | $50M+ | sec-api.io, SEC Filing Data | Already decent free API |
@@ -283,12 +283,17 @@ Ranked by **(market size) × (low competition) × (technical feasibility)**:
 
 | Company | URL | Data | Pricing | Coverage | API Type | Weaknesses | Founded | Funding |
 |---------|-----|------|---------|----------|----------|-----------|---------|---------|
-| **SAM.gov** | [sam.gov](https://sam.gov/) | Federal contracts, opportunities | Free | US federal only | REST | Complex, federal only | N/A | Government |
-| **HigherGov** | [highergov.com](https://www.highergov.com/) | Federal + SLED procurement | Custom pricing; API invite-only | 200+ sources, 65M+ awards | REST | Invite-only API access | Unknown | Unknown |
-| **GovWin (Deltek)** | [govwin.com](https://iq.govwin.com/) | Federal procurement intelligence | $10K+/yr est. | US federal | Platform | Expensive, legacy | 2005 | Roper Technologies subsidiary |
-| **Govly** | [govly.com](https://www.govly.com/) | Federal + vehicle opportunities | Free tier + enterprise | 40+ contract vehicles | Platform | Newer, limited scope | 2020 | Unknown |
-| **GovCon API** | [govconapi.com](https://govconapi.com/) | SAM.gov wrapper | Unknown | 112K+ federal notices | REST | Limited to SAM.gov data | Unknown | Unknown |
-| **EU TED** | [ted.europa.eu](https://ted.europa.eu/) | EU-wide procurement | Free | All EU member states | REST/Bulk | XML-heavy, complex structure | N/A | EU Government |
+| **SAM.gov** | [sam.gov](https://sam.gov/) | Federal contracts, opportunities | Free (1,000 req/day with key) | US federal only | REST | 1-4 week registration wait, complex nested JSON, 1K req/day limit | N/A | Government |
+| **USAspending** | [usaspending.gov](https://api.usaspending.gov/) | Federal spending, contracts, grants | Free, no key needed | All US federal spending since FY2008 | REST (open source) | Awards/spending only, not opportunities | N/A | Government |
+| **HigherGov** | [highergov.com](https://www.highergov.com/) | Federal + SLED procurement | **$500/yr** (Starter) to **$2,500/yr** (Standard); API included | 200+ sources, 65M+ awards, 300+ API fields | REST | US-only, 300 API fields is subset of 5,000+ tracked | Unknown | Unknown |
+| **GovWin (Deltek)** | [govwin.com](https://iq.govwin.com/) | Federal + SLED procurement intelligence | **$13K-$119K/yr** (~$50-100/user/mo) | US + Canada, 1.9M company profiles | Platform (subscriber-only API) | Very expensive, no public API docs, no international beyond US/Canada | 2005 | Roper Technologies subsidiary |
+| **Bloomberg Gov** | [about.bgov.com](https://about.bgov.com/) | Federal procurement + legislative | Enterprise ($10K-$50K+/yr est.) | US federal | REST/CSV/JSON (data license) | Very expensive, US-only, terminal product not API-first | N/A | Bloomberg subsidiary |
+| **Govly** | [govly.com](https://www.govly.com/) | Federal + vehicle opportunities | Free tier; **$99/user/mo** ($15K+/yr) | 40+ contract vehicles (GSA, SEWP, ITES) | API on premium plans | US-only, newer entrant, API only on premium | 2020 | Unknown |
+| **GovCon API** | [govconapi.com](https://govconapi.com/) | SAM.gov wrapper | Free (25 req/day); **$19/mo** (Developer) | 134K+ federal opportunities | REST (clean JSON) | Limited to SAM.gov data only | Unknown | Unknown |
+| **GovSpend** | [govspend.com](https://govspend.com/) | SLED spending + federal | ~$7K-$25K/yr | SLED purchase orders, bids, contracts + 19 federal datasets | Salesforce/Zapier/API | SLED-focused, expensive | Unknown | Unknown |
+| **Spend Network** | [spendnetwork.com](https://www.spendnetwork.com/) | Global procurement | Enterprise (unlisted) | **160 countries**, 700+ data feeds | REST (JSON) | Coverage depth varies wildly by country, opaque pricing | 2007 | Unknown |
+| **EU TED** | [ted.europa.eu](https://ted.europa.eu/) | EU-wide procurement | Free | All EU member states + EEA | REST + FTP + CSV | Only above-threshold procurement, complex XML, language barriers | N/A | EU Government |
+| **OpenTender.eu** | [opentender.eu](https://opentender.eu/) | European procurement (OCDS) | Free (**non-commercial only**) | 35 European jurisdictions | Bulk download (OCDS JSON) | Non-commercial license, not a real-time API | N/A | NGO (academic) |
 
 ### Sanctions & Compliance
 
@@ -535,7 +540,8 @@ Ranked by **(market size) × (low competition) × (technical feasibility)**:
 
 **Why this niche:**
 - Literally zero API providers serving this market nationally
-- HDScores attempted it but stalled (open-source, in alpha since 2014)
+- HDI (Hazel Analytics/Ecolab) is enterprise-only with no public API — serves 250+ brands (Starbucks, Uber Eats) but not developer-accessible
+- HDScores offers $0.05/query but appears to have limited current activity
 - Clear buyer personas with budget (food delivery platforms, insurance, real estate)
 - Data is unambiguously public records
 - Many health departments use common platforms (HealthSpace), reducing scraper variety
@@ -585,7 +591,7 @@ Niches with **proven demand** but **zero or one API provider**:
 
 | Opportunity | Demand Evidence | Current Providers | Why It's Blue Ocean |
 |-------------|----------------|-------------------|-------------------|
-| **US restaurant inspection API** | Food delivery platforms need it, insurance needs it, RE investors need it. UK already has national API (FHRS) proving the concept | HDScores (stalled/alpha) | Zero commercial APIs |
+| **US restaurant inspection API** | Food delivery platforms need it, insurance needs it, RE investors need it. UK already has national API (FHRS) proving the concept. HDI/Ecolab serves enterprise only (powers Yelp scores). | HDI/Ecolab (enterprise, no public API), HDScores ($0.05/query, limited) | No affordable developer API |
 | **Multi-profession license verification API** | $2B+ credentialing industry, every hospital/staffing firm needs it, construction companies legally required to verify | Verifiable (healthcare only), LicensedCheck (limited) | No cross-profession API with good coverage |
 | **State-level lobbying data API** | Political intelligence is growing market, companies spend billions on lobbying, transparency demand increasing | OpenSecrets (federal only, nonprofit) | Zero state-level API providers |
 | **German/Italian company data API** | Handelsregister has no API, Italian visura system charges per-lookup, KYB demand is massive | North Data (Germany, limited), none for Italy | Near-zero quality API providers |
