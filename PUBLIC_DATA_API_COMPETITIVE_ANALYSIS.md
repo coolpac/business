@@ -306,19 +306,25 @@ Ranked by **(market size) × (low competition) × (technical feasibility)**:
 
 | Company | URL | Data | Pricing | Coverage | API Type | Weaknesses | Founded | Funding |
 |---------|-----|------|---------|----------|----------|-----------|---------|---------|
-| **ComplyAdvantage** | [complyadvantage.com](https://complyadvantage.com/) | Sanctions, PEP, adverse media | From $120/mo; startup program (12mo free) | Global, 100+ sanctions lists | REST | Expensive at scale | 2014 | $100M+ raised |
-| **Dow Jones Risk** | [dowjones.com](https://www.dowjones.com/professional/risk/) | Sanctions, PEP, adverse media | Enterprise ($20K+/yr est.) | Global, premium coverage | Various | Very expensive, enterprise-only | N/A | News Corp subsidiary |
-| **Refinitiv World-Check** | [lseg.com](https://www.lseg.com/en/data-analytics/financial-data/sanctions-screening) | Sanctions, PEP, entity data | Enterprise ($15K+/yr est.) | Global | Various | Expensive, LSEG subsidiary | N/A | LSEG subsidiary |
-| **OpenSanctions** | [opensanctions.org](https://www.opensanctions.org/) | Sanctions, PEP, watchlists | Free (non-commercial); commercial license required | Global, open source | REST (yente) | Self-hosted for free tier, commercial license needed | 2021 | Grants/donations |
-| **sanctions.io** | [sanctions.io](https://www.sanctions.io/) | Sanctions, PEP screening | Free trial, volume-based | Global, 1M+ PEP records | REST | Newer player | Unknown | Unknown |
+| **ComplyAdvantage** | [complyadvantage.com](https://complyadvantage.com/) | Sanctions, PEP, adverse media | From $120/mo; **free 12mo for startups** (ComplyLaunch). Est. $15K-100K+/yr at scale | Global, 100+ sanctions lists | REST | Expensive at scale | 2014 | $100M+ raised |
+| **Dow Jones Risk** | [dowjones.com](https://www.dowjones.com/professional/risk/) | Sanctions, PEP, adverse media | **$50K-$200K+/yr**, opaque pricing | Global, editorially curated, premium | Various | Very expensive, enterprise-only, opaque | N/A | News Corp subsidiary |
+| **LSEG World-Check** | [lseg.com](https://www.lseg.com/en/data-analytics/financial-data/sanctions-screening) | Sanctions, PEP, entity data | Points-based, **$30K-$300K+/yr** | Global, 4.9M+ risk profiles | Various | Very expensive, LSEG subsidiary | N/A | LSEG subsidiary |
+| **OpenSanctions** | [opensanctions.org](https://www.opensanctions.org/) | Sanctions, PEP, watchlists | Free (non-commercial); **EUR 0.10/API call** (commercial); self-host yente for free | Global, open source | REST (yente) | Commercial license needed for business use | 2021 | Grants/donations |
+| **sanctions.io** | [sanctions.io](https://www.sanctions.io/) | Sanctions, PEP screening | **$899/5,000 calls** (~$0.18/call) | Global, 1M+ PEP records, hourly updates | REST | Newer player | Unknown | Unknown |
+| **Dilisense** | [dilisense.com](https://dilisense.com/) | Sanctions, PEP, criminal watchlists | **EUR 0.01/screening** (cheapest in market) | Global | REST | Newer/smaller player | Unknown | Unknown |
+| **Sanctionssearch.com** | [sanctionssearch.com](https://sanctionssearch.com/) | Sanctions screening | **GBP 90/yr + GBP 0.10/search** | Global | Web + API | Basic matching, less sophisticated | Unknown | Unknown |
+| **NameScan** | [namescan.io](https://namescan.io/) | PEP + sanctions screening | **$0.48-$1.80/scan** (PAYG) | Global | REST | Pay-as-you-go only | Unknown | Unknown |
 
 ### Import/Export & Trade Data
 
 | Company | URL | Data | Pricing | Coverage | API Type | Weaknesses | Founded | Funding |
 |---------|-----|------|---------|----------|----------|-----------|---------|---------|
-| **Panjiva** | [panjiva.com](https://panjiva.com/) | Bills of lading, shipment data | Enterprise (est. $5K+/yr) | 2B+ records, 22 customs sources | Platform | Expensive, S&P Global owned | 2006 | Acquired by S&P Global |
-| **ImportGenius** | [importgenius.com](https://www.importgenius.com/) | US customs, bills of lading | From ~$200-300/mo; enterprise custom | 25+ countries | Platform + API (enterprise) | API only on enterprise tier | 2006 | Unknown |
+| **Panjiva** | [panjiva.com](https://panjiva.com/) | Bills of lading, shipment data | **$1K-$3K+/mo** (custom) | 2B+ records, 22 customs sources | Platform | Expensive, S&P Global owned, no self-serve | 2006 | Acquired by S&P Global |
+| **Descartes Datamyne** | [descartes.com](https://www.descartes.com/) | Global trade data | Enterprise (custom) | **230 markets**, comprehensive | Platform | Enterprise-only, very expensive | Unknown | Public (NASDAQ: DSGX) |
+| **ImportGenius** | [importgenius.com](https://www.importgenius.com/) | US customs, bills of lading | **$149-$399/mo** (self-serve); enterprise custom | 25+ countries | Platform + API (enterprise) | API only on enterprise tier | 2006 | Unknown |
+| **ImportKey** | [importkey.com](https://www.importkey.com/) | US import/export data | **~$25-45/mo** (basic) | US-focused | Platform | Basic, US only | Unknown | Unknown |
 | **TradeInt** | [tradeint.com](https://tradeint.com/) | Trade intelligence | Custom pricing | Multiple countries | Platform | Smaller player | Unknown | Unknown |
+| **UN Comtrade** | [comtradeplus.un.org](https://comtradeplus.un.org/) | Trade flow data (aggregated) | Free (rate-limited) | Global, all countries | REST | Aggregated flows not shipment-level, rate limits | N/A | UN |
 
 ### SEC / Corporate Filings
 
